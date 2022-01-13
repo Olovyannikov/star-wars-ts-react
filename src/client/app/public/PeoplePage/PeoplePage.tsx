@@ -1,37 +1,62 @@
-import Image from "next/image";
-import {getResources} from "@/utils/api";
+import {Container, Title} from "@/ui";
+import {PeopleList, PeopleNavigation} from "@/components";
+import {getResources} from "@/utils/network";
 import {useEffect, useState} from "react";
-import {API_PEOPLE} from "@/constants/constants";
-import {getPeopleId, getPeopleImage} from "../../../services/getPeopleData";
-import {PeopleList} from "@/components";
+import {API_PEOPLE, API_PEOPLE_RESERVE} from "@/constants/constants";
+import {PeoplePageProps} from "./PeoplePage.props";
+import {useQueryParams} from "@/hooks/useQueryParams";
+import {getPeopleId, getPeopleImage, getPeoplePageId} from "@/services/getPeopleData";
 
-export const PeoplePage = (): JSX.Element => {
-    const [people, setPeople] = useState([]);
+export const PeoplePage = ({setErrorApi}: PeoplePageProps): JSX.Element => {
+    const [people, setPeople] = useState<[]>([]);
+    const [prevPage, setPrevPage] = useState<string>();
+    const [nextPage, setNextPage] = useState<string>();
+    const [counterPage, setCounterPage] = useState<number>(1);
+
+    const query = useQueryParams();
+    const queryPage = query.page;
 
     const getResource = async (url: string) => {
         const res = await getResources(url);
 
-        const peoples = res.results.map(({name, url}: { name: string, url: string }) => {
-            const id = getPeopleId(url);
-            const img = getPeopleImage(id);
+        if (res) {
+            const peoples = res.results.map(({name, url}: { name: string, url: string }) => {
+                const id = getPeopleId(url);
+                const img = getPeopleImage(id);
 
-            return {
-                id,
-                name,
-                img
-            }
-        });
+                return {
+                    id,
+                    name,
+                    img
+                }
+            });
 
-        setPeople(peoples)
+            setPeople(peoples);
+            setPrevPage(res.previous);
+            setNextPage(res.next);
+            setCounterPage(getPeoplePageId(url));
+            setErrorApi(false);
+
+        } else {
+            setErrorApi(true);
+
+        }
     }
 
     useEffect(() => {
-        getResource(API_PEOPLE)
-    }, []);
+        getResource(API_PEOPLE_RESERVE + queryPage);
+    }, [queryPage]);
 
     return (
-        <>
-            {people && <PeopleList people={people}/>}
-        </>
+        <section>
+            <Container>
+                <PeopleNavigation
+                    prevPage={prevPage}
+                    nextPage={nextPage}
+                    counterPage={counterPage}
+                />
+                {people && <PeopleList people={people}/>}
+            </Container>
+        </section>
     )
 }

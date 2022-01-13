@@ -1,3 +1,9 @@
+/**
+ * Отравляет запрос
+ * @param {String} url - url для запроса
+ * @return {Promise} - Promise с результатом запроса.
+ **/
+
 export const getResources = async (url: string) => {
     try {
         const res = await fetch(url);
@@ -12,3 +18,4 @@ export const getResources = async (url: string) => {
         return false;
     }
 };
+

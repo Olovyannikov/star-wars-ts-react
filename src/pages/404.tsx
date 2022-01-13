@@ -1,5 +1,8 @@
+import {withLayout} from "@/layout";
+import {Error404Page} from "../client/app/public/PublicApplication";
+
 const Error404 = (): JSX.Element => {
-    return <h1>404 Not Found</h1>
+    return <Error404Page/>
 }
 
-export default Error404;
+export default withLayout(Error404);

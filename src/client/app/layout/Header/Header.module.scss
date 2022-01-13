@@ -1,0 +1,31 @@
+.nav {
+  padding-top: 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-m);
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.link {
+  display: block;
+  padding: 7px 10px;
+  min-width: 70px;
+  border: 2px solid transparent;
+  font-weight: var(--font-bold);
+  color: var(--color-white);
+  text-align: center;
+  transition: all var(--transition) ease;
+  text-shadow: var(--text-shadow-yellow);
+  border-radius: var(--border-radius-s);
+}
+
+.active {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  text-shadow: none;
+}

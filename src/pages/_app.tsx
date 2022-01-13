@@ -2,6 +2,8 @@ import "@/styles";
 import React from "react";
 import Head from "next/head";
 import type { AppProps } from 'next/app'
+import Image from 'next/image';
+import defaultBg from "@/resources/img/bg.jpeg";
 
 const MyApp = ({Component, pageProps, router}: AppProps): JSX.Element => {
 
@@ -13,7 +15,9 @@ const MyApp = ({Component, pageProps, router}: AppProps): JSX.Element => {
                 <meta property="og:url" content={process.env.NEXT_PUBLIC_DOMAIN + router.asPath}/>
                 <meta property="og:locale" content="ru_RU"/>
             </Head>
-            <Component {...pageProps} />
+            <Image src={defaultBg} layout='fill'/>
+            <Component
+                {...pageProps} />
         </>)
 }
 

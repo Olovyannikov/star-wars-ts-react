@@ -5,7 +5,10 @@ export const HTTP = 'http://';
 // swapi
 export const SWAPI_PEOPLE = 'people'
 export const API = process.env.NEXT_PUBLIC_DOMAIN;
-export const API_PEOPLE = HTTPS + API + '/people/';
+export const API_RESERVE = process.env.NEXT_PUBLIC_DOMAIN_RESERVE;
+export const SWAPI_PARAM_PAGE = '/?page='
+export const API_PEOPLE = HTTPS + API + SWAPI_PEOPLE + SWAPI_PARAM_PAGE;
+export const API_PEOPLE_RESERVE = HTTPS + API_RESERVE + SWAPI_PEOPLE + SWAPI_PARAM_PAGE;
 
 // visualguide
 

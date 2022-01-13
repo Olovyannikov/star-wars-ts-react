@@ -1,17 +1,20 @@
 :root {
   /* Colors */
   --color-background: #10100e;
-  --color-primary: #7351f5;
+  --color-error: #ffff00;
+  --color-primary: #ae72c2;
   --color-primary-hover: #7653fcba;
   --color-red: #fc836d;
   --color-light-red: #e39688;
   --color-danger: #de0000;
   --color-green: #1dc37e;
+  --color-blue: #6a83fb;
   --color-lightgreen: #c8f8e4;
   --color-lightgray: #ebebeb;
   --color-gray: #b3c0d9;
   --color-darkgray: #6c7077;
   --color-placeholder: #a4a4a4;
+  --color-title: #cccc46;
 
   /* Color-typography */
   --color-black: #3b434e;
@@ -21,14 +24,28 @@
   --font-alt: "Roboto", sans-serif;
   --font-family: "Noto Sans", var(--font-alt);
   --font-title: 400 30px / 34.5px var(--font-alt);
+  --font-size-header: 26px;
+  --font-size-main: 18px;
+  --font-bold: 600;
+
+  /* Text-shadow */
+  --text-shadow-yellow: 0 0 2px var(--color-white), 0 0 40px var(--color-error);
+  --text-shadow-blue: 0 0 2px var(--color-white), 0 0 40px var(--color-blue);
+
+  /* Animations */
+  --transition: 0.4s;
 
   /* Offsets */
   --gap: 32px;
-  --gutter: 24px;
+  --gutter: 15px;
   --space-m: 20px;
-  --space-l: 40px;
+  --space-l: 30px;
+  --space-xl: 40px;
 
   /* Common */
 
   --border-radius-s: 3px;
+
+  /* Assets */
+  --container-width: 1200px;
 }

@@ -1,14 +1,18 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "./src/",
     "paths": {
-      "@/*": ["*/**"],
+      "@/*": ["./*/**"],
       "@/layout": ["client/app/layout/Layout"],
       "@/styles": ["client/resources/styles/styles.scss"],
       "@/ui": ["client/app/ui/index.ts"],
       "@/components": ["client/app/components/index.ts"],
       "@/utils/*": ["client/utils/*"],
-      "@/constants/*": ["client/constants/*"]
+      "@/constants/*": ["client/constants/*"],
+      "@/resources/*": ["client/resources/*"],
+      "@/public/*": ["../public/*"],
+      "@/services/*": ["client/services/*"],
+      "@/hooks/*": ["client/hooks/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
