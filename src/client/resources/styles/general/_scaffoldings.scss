@@ -25,6 +25,14 @@ html {
   background-position: top left;
   background-attachment: fixed;
   background-color: var(--color-background);
+
+  #__next {
+    position: relative;
+
+    @media (min-width: 927px) {
+      min-height: 100vh;
+    }
+  }
 }
 
 a {

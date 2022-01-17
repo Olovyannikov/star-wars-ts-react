@@ -12,16 +12,20 @@
 }
 
 .link {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 7px 10px;
   min-width: 70px;
+  min-height: 36px;
   border: 2px solid transparent;
-  font-weight: var(--font-bold);
-  color: var(--color-white);
-  text-align: center;
-  transition: all var(--transition) ease;
-  text-shadow: var(--text-shadow-yellow);
   border-radius: var(--border-radius-s);
+  font-weight: var(--font-bold);
+  line-height: 0;
+  text-shadow: var(--text-shadow-yellow);
+  text-align: center;
+  color: var(--color-white);
+  transition: all var(--transition) ease;
 }
 
 .active {

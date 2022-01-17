@@ -1,0 +1,28 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter);
+  margin-left: var(--space-l);
+  padding: var(--space-m) 0;
+  color: var(--color-white);
+
+  @media (max-width: 1024px) {
+    margin-left: 0;
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.episode {
+  padding: var(--space-xs);
+  border-radius: var(--border-radius-s);
+  background-color: var(--color-danger);
+}
+
+.title {
+  text-shadow: var(--text-shadow-yellow);
+}

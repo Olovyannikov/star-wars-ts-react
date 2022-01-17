@@ -19,3 +19,8 @@ export const getResources = async (url: string) => {
     }
 };
 
+export const makeConcurrentRequest = async (url: string[]) => {
+    return await Promise.all(url.map(data => {
+        return fetch(data).then(result => result.json());
+    }));
+}

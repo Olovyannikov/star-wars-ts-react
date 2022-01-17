@@ -1,0 +1,16 @@
+.link {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--gutter);
+  font-weight: var(--font-bold);
+  font-size: var(--font-size-main);
+  line-height: 0;
+  color: var(--color-error);
+
+  svg {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    object-position: center center;
+  }
+}

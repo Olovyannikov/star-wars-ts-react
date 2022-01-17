@@ -15,9 +15,12 @@ export const Header = (): JSX.Element => {
                     <ul className={s.list}>
                         {headerData.map((link: { route: string, text: string }) => (
                             <li key={link.text}>
-                                <Link href={link.route}>
+                                <Link href={link.route} shallow={true}>
                                     <a
-                                        className={cn(s.link, {[s.active]: router.asPath.replace(/\?.*/g, '') === link.route.replace(/\?.*/g, '')})}
+                                        className={cn(s.link,
+                                            {[s.active]: router.asPath === link.route},
+                                            {[s.active]: router.asPath.includes('person') && link.text === 'Characters'}
+                                        )}
                                     >
                                         {link.text}
                                     </a>

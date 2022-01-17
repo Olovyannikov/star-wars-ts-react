@@ -11,6 +11,8 @@
       "@/constants/*": ["client/constants/*"],
       "@/resources/*": ["client/resources/*"],
       "@/public/*": ["../public/*"],
+      "@/render/public/*": ["client/app/public/*"],
+      "@/render/private/*": ["client/app/private/*"],
       "@/services/*": ["client/services/*"],
       "@/hooks/*": ["client/hooks/*"]
     },

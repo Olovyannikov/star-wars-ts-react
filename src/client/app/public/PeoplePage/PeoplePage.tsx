@@ -1,4 +1,4 @@
-import {Container, Title} from "@/ui";
+import {Container, Preloader} from "@/ui";
 import {PeopleList, PeopleNavigation} from "@/components";
 import {getResources} from "@/utils/network";
 import {useEffect, useState} from "react";
@@ -12,6 +12,8 @@ export const PeoplePage = ({setErrorApi}: PeoplePageProps): JSX.Element => {
     const [prevPage, setPrevPage] = useState<string>();
     const [nextPage, setNextPage] = useState<string>();
     const [counterPage, setCounterPage] = useState<number>(1);
+
+    const [isLoading, setIsLoading] = useState<boolean>(true);
 
     const query = useQueryParams();
     const queryPage = query.page;
@@ -36,6 +38,7 @@ export const PeoplePage = ({setErrorApi}: PeoplePageProps): JSX.Element => {
             setNextPage(res.next);
             setCounterPage(getPeoplePageId(url));
             setErrorApi(false);
+            setIsLoading(false);
 
         } else {
             setErrorApi(true);
@@ -55,6 +58,7 @@ export const PeoplePage = ({setErrorApi}: PeoplePageProps): JSX.Element => {
                     nextPage={nextPage}
                     counterPage={counterPage}
                 />
+                {isLoading && <Preloader/>}
                 {people && <PeopleList people={people}/>}
             </Container>
         </section>
