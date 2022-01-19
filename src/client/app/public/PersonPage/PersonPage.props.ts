@@ -5,4 +5,7 @@ export interface PersonPageProps {
         {title: string, data: string}
     ];
     films: string[];
+    personID: string | string[] | undefined;
+    personFav: boolean;
+    setPersonFav: (b: boolean) => void;
 }

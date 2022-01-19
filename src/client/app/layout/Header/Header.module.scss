@@ -2,12 +2,14 @@
   padding-top: 15px;
   display: flex;
   align-items: center;
+  width: 100%;
   margin-bottom: var(--space-m);
 }
 
 .list {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
   gap: 20px;
 }
 
@@ -32,4 +34,13 @@
   border-color: var(--color-primary);
   color: var(--color-primary);
   text-shadow: none;
+}
+
+.fav {
+  color: var(--color-red);
+  padding: 0;
+}
+
+.favoriteItem {
+  margin-left: auto;
 }

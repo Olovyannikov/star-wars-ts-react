@@ -1,12 +1,16 @@
-import "@/styles";
 import React from "react";
 import Head from "next/head";
-import type { AppProps } from 'next/app'
 import Image from 'next/image';
+import {Provider} from "react-redux";
+
+import store from "@/store/store";
+
+import type { AppProps } from 'next/app';
+
 import defaultBg from "@/resources/img/bg.jpeg";
+import "@/styles";
 
 const MyApp = ({Component, pageProps, router}: AppProps): JSX.Element => {
-
     return (
         <>
             <Head>
@@ -16,9 +20,12 @@ const MyApp = ({Component, pageProps, router}: AppProps): JSX.Element => {
                 <meta property="og:locale" content="ru_RU"/>
             </Head>
             <Image src={defaultBg} layout='fill'/>
-            <Component
-                {...pageProps} />
-        </>)
+            <Provider store={store}>
+                <Component
+                    {...pageProps} />
+            </Provider>
+        </>
+    )
 }
 
 export default MyApp;

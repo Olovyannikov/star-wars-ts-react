@@ -4,6 +4,7 @@ import {Container} from "@/ui";
 import s from './Header.module.scss';
 import {useRouter} from "next/router";
 import {headerData} from "./Header.data";
+import {FavoriteIcon} from "../../ui/FavoriteIcon/FavoriteIcon";
 
 export const Header = (): JSX.Element => {
     const router = useRouter();
@@ -27,6 +28,16 @@ export const Header = (): JSX.Element => {
                                 </Link>
                             </li>
                         ))}
+                        <li className={s.favoriteItem}>
+                            <Link href='/favorites'>
+                                <a
+                                    className={cn(s.link, s.fav)}
+                                    aria-label="Goto Fav Page"
+                                >
+                                    <FavoriteIcon width={36} height={36}/>
+                                </a>
+                            </Link>
+                        </li>
                     </ul>
                 </nav>
             </Container>

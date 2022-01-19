@@ -14,7 +14,8 @@
       "@/render/public/*": ["client/app/public/*"],
       "@/render/private/*": ["client/app/private/*"],
       "@/services/*": ["client/services/*"],
-      "@/hooks/*": ["client/hooks/*"]
+      "@/hooks/*": ["client/hooks/*"],
+      "@/store/*": ["client/store/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
