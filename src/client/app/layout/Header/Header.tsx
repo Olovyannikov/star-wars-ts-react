@@ -1,19 +1,50 @@
 import cn from "classnames";
 import Link from 'next/link';
-import {Container} from "@/ui";
-import s from './Header.module.scss';
 import {useRouter} from "next/router";
+import {Theme, useTheme} from "@/context/Theme.context";
+
+import {Container} from "@/ui";
+import {FavoriteIcon} from "../../components/UI/FavoriteIcon/FavoriteIcon";
+
+import s from './Header.module.scss';
+
 import {headerData} from "./Header.data";
-import {FavoriteIcon} from "../../ui/FavoriteIcon/FavoriteIcon";
+
+import {Aliance} from "./img/Aliance";
+import {Empire} from "./img/Empire";
+import {SW} from "./img/SW";
 
 export const Header = (): JSX.Element => {
     const router = useRouter();
+
+    const {theme, setTheme} = useTheme();
 
     return (
         <header>
             <Container>
                 <nav className={s.nav}>
                     <ul className={s.list}>
+                        <li className={s.icon}>
+                            {router.asPath === '/' ?
+                                <a>
+                                    {theme === Theme.Light &&
+                                        <Aliance color={'var(--color-error)'} width={48} height={48}/>}
+                                    {theme === Theme.Dark &&
+                                        <Empire color={'var(--color-red)'} width={48} height={48}/>}
+                                    {theme === Theme.Grey && <SW width={48} height={48}/>}
+                                </a>
+                                :
+                                <Link href='/'>
+                                    <a>
+                                        {theme === Theme.Light &&
+                                            <Aliance color={'var(--color-error)'} width={48} height={48}/>}
+                                        {theme === Theme.Dark &&
+                                            <Empire color={'var(--color-red)'} width={48} height={48}/>}
+                                        {theme === Theme.Grey && <SW width={48} height={48}/>}
+                                    </a>
+                                </Link>
+                            }
+                        </li>
                         {headerData.map((link: { route: string, text: string }) => (
                             <li key={link.text}>
                                 <Link href={link.route} shallow={true}>

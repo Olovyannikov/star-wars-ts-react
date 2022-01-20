@@ -1,4 +1,5 @@
 import cn from "classnames";
+
 import {PreloaderProps} from "./Preloader.props";
 import s from './Preloader.module.scss';
 

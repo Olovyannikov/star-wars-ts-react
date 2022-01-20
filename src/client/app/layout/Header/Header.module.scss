@@ -8,9 +8,23 @@
 
 .list {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   width: 100%;
   gap: 20px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--space-l);
+  width: auto;
+
+  a {
+    font-size: 0;
+    line-height: 0;
+  }
 }
 
 .link {

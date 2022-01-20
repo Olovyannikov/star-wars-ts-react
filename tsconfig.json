@@ -5,7 +5,7 @@
       "@/*": ["./*/**"],
       "@/layout": ["client/app/layout/Layout"],
       "@/styles": ["client/resources/styles/styles.scss"],
-      "@/ui": ["client/app/ui/index.ts"],
+      "@/ui": ["client/app/components/UI/index.ts"],
       "@/components": ["client/app/components/index.ts"],
       "@/utils/*": ["client/utils/*"],
       "@/constants/*": ["client/constants/*"],
@@ -15,7 +15,8 @@
       "@/render/private/*": ["client/app/private/*"],
       "@/services/*": ["client/services/*"],
       "@/hooks/*": ["client/hooks/*"],
-      "@/store/*": ["client/store/*"]
+      "@/store/*": ["client/store/*"],
+      "@/context/*": ["client/context/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

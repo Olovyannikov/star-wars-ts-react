@@ -1,11 +1,15 @@
+import {useEffect, useState} from "react";
+
 import {Container, Preloader} from "@/ui";
 import {PeopleList, PeopleNavigation} from "@/components";
+
 import {getResources} from "@/utils/network";
-import {useEffect, useState} from "react";
 import {API_PEOPLE, API_PEOPLE_RESERVE} from "@/constants/constants";
-import {PeoplePageProps} from "./PeoplePage.props";
+
 import {useQueryParams} from "@/hooks/useQueryParams";
 import {getPeopleId, getPeopleImage, getPeoplePageId} from "@/services/getPeopleData";
+
+import {PeoplePageProps} from "./PeoplePage.props";
 
 export const PeoplePage = ({setErrorApi}: PeoplePageProps): JSX.Element => {
     const [people, setPeople] = useState<[]>([]);

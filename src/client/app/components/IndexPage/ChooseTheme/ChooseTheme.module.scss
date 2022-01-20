@@ -1,0 +1,31 @@
+.list {
+  display: flex;
+  gap: var(--space-xl);
+}
+
+.btn {
+  width: 250px;
+  height: 315px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: var(--transition) ease;
+}
+
+.light {
+  &:hover {
+    box-shadow: 0 0 10px 5px rgb(41 229 45 / 40%);
+  }
+}
+
+.dark {
+  &:hover {
+    box-shadow: 0 0 10px 5px rgb(216 34 40 / 40%);
+  }
+}
+
+.neutral {
+
+  &:hover {
+    box-shadow: 0 0 10px 5px rgb(224 224 81 / 40%);
+  }
+}

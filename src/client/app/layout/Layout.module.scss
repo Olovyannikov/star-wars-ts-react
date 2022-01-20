@@ -2,3 +2,17 @@
   position: relative;
   z-index: 1;
 }
+
+.image {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+
+.dark {
+  background-image: linear-gradient(to right top, #fb0000, #ca0f06, #9b1309, #6e1307, #450f01);
+}
+
+.light {
+  background-image: linear-gradient(to right top, #82def9, #82b3f3, #ac7fc8, #bd4875, #9a3015);
+}

@@ -6,3 +6,4 @@ export * from './PersonPage/PersonItem/PersonItem';
 export * from './PersonPage/PersonLinkBack/PersonLinkBack';
 export * from './PersonPage/PersonFilms/PersonFilms';
 export * from './ErrorMessagePage/ErrorMessage';
+export * from './IndexPage/IndexPage';

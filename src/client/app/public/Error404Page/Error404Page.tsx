@@ -1,7 +1,9 @@
-import {Container} from "@/ui";
 import Image from "next/image";
-import notFound from './notFound.png';
 import {useRouter} from "next/router";
+
+import {Container} from "@/ui";
+import notFound from './notFound.png';
+
 import s from './Error404Page.module.scss';
 
 export const Error404Page = (): JSX.Element => {

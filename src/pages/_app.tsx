@@ -1,16 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import Head from "next/head";
 import Image from 'next/image';
 import {Provider} from "react-redux";
 
 import store from "@/store/store";
+import {Theme, ThemeContext, useTheme} from "@/context/Theme.context";
 
-import type { AppProps } from 'next/app';
-
-import defaultBg from "@/resources/img/bg.jpeg";
 import "@/styles";
+import type {AppProps} from 'next/app';
 
 const MyApp = ({Component, pageProps, router}: AppProps): JSX.Element => {
+    const [theme, setTheme] = useState(Theme.Grey);
+
     return (
         <>
             <Head>
@@ -19,11 +20,13 @@ const MyApp = ({Component, pageProps, router}: AppProps): JSX.Element => {
                 <meta property="og:url" content={process.env.NEXT_PUBLIC_DOMAIN + router.asPath}/>
                 <meta property="og:locale" content="ru_RU"/>
             </Head>
-            <Image src={defaultBg} layout='fill'/>
-            <Provider store={store}>
-                <Component
-                    {...pageProps} />
-            </Provider>
+
+            <ThemeContext.Provider value={{theme, setTheme}}>
+                <Provider store={store}>
+                    <Component
+                        {...pageProps} />
+                </Provider>
+            </ThemeContext.Provider>
         </>
     )
 }
