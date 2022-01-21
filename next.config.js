@@ -7,7 +7,7 @@ module.exports = {
         `,
     },
     images: {
-        domains: [process.env.NEXT_PUBLIC_IMAGES, 'starwars-visualguide.com']
+        domains: ['starwars-visualguide.com']
     },
     webpack(config) {
         config.module.rules.push({
