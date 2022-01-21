@@ -43,10 +43,8 @@ export const PeoplePage = ({setErrorApi}: PeoplePageProps): JSX.Element => {
             setCounterPage(getPeoplePageId(url));
             setErrorApi(false);
             setIsLoading(false);
-
         } else {
             setErrorApi(true);
-
         }
     }
 
