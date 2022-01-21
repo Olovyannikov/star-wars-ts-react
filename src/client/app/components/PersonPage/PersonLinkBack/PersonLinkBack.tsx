@@ -1,6 +1,8 @@
 import {SyntheticEvent} from "react";
 import {useRouter} from "next/router";
+
 import s from './PersonLinkBack.module.scss';
+
 import RouterBackIcon from './PersonBack.icon.svg';
 
 export const PersonLinkBack = (): JSX.Element => {

@@ -1,7 +1,9 @@
 import {useEffect, useState} from "react";
+
 import {makeConcurrentRequest} from "@/utils/network";
-import {PersonFilmsProps} from "./PersonFilms.props";
+
 import s from './PersonFilms.module.scss';
+import {PersonFilmsProps} from "./PersonFilms.props";
 
 export const PersonFilms = ({films}: PersonFilmsProps): JSX.Element => {
     const [filmsName, setFilmsName] = useState<any>([]);

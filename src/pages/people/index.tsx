@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {withLayout} from "@/layout";
 import {ErrorMessage} from "@/components";
-import {PeoplePage} from "../../client/app/public/PublicApplication";
+import {PeoplePage} from "@/render/public/PublicApplication";
 
 const People = (): JSX.Element => {
     const [errorApi, setErrorApi] = useState<boolean>(false);

@@ -32,9 +32,7 @@ const Layout = ({children}: LayoutProps): JSX.Element => {
 export const withLayout = <T extends Record<string, unknown>>(Component: FunctionComponent<T>): (props: T) => void => {
     return function withLayoutComponent(props: T): JSX.Element {
         return (
-            <Layout>
-                <Component {...props}/>
-            </Layout>
+            <Layout><Component {...props}/></Layout>
         )
     }
 }

@@ -1,10 +1,9 @@
-import React, {useState} from "react";
 import Head from "next/head";
-import Image from 'next/image';
 import {Provider} from "react-redux";
+import React, {useState} from "react";
 
 import store from "@/store/store";
-import {Theme, ThemeContext, useTheme} from "@/context/Theme.context";
+import {Theme, ThemeContext} from "@/context/Theme.context";
 
 import "@/styles";
 import type {AppProps} from 'next/app';

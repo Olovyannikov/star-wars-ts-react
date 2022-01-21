@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from "next/image";
+
 import s from './PeopleList.module.scss';
 import {PeopleListProps} from "./PeopleList.props";
 

@@ -1,8 +1,7 @@
-import cn from "classnames";
-import Link from 'next/link';
+import {Button} from "@/ui";
+
 import s from './PeopleNavigation.module.scss';
 import {PeopleNavigationProps} from "./PeopleNavigation.props";
-import {Button} from "../../UI/Button/Button";
 
 export const PeopleNavigation = ({
                                      counterPage,

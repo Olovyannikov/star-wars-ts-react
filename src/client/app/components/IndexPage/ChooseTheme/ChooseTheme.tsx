@@ -1,3 +1,4 @@
+import cn from "classnames";
 import Image from 'next/image';
 
 import {Theme, useTheme} from "@/context/Theme.context";
@@ -7,7 +8,6 @@ import s from './ChooseTheme.module.scss';
 import rebels from './img/rebels.jpeg';
 import empire from './img/empire.jpeg';
 import neutral from './img/neutral.jpeg';
-import cn from "classnames";
 
 export const ChooseTheme = (): JSX.Element => {
     const {theme, setTheme} = useTheme();

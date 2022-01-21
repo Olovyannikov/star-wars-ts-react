@@ -1,15 +1,15 @@
 import {useRouter} from "next/router";
+import {useSelector} from "react-redux";
 import {SetStateAction, useEffect, useState} from "react";
 
 import {getResources} from "@/utils/network";
+import {getPeopleImage} from "@/services/getPeopleData";
 import {API_PERSON, API_PERSON_RESERVE} from "@/constants/constants";
 
 import {Container, Preloader} from "@/ui";
 
-import {Error404Page} from "../../../public/Error404Page/Error404Page";
-import {getPeopleImage} from "@/services/getPeopleData";
-import {PersonPage} from "../../../public/PersonPage/PersonPage";
-import {useSelector} from "react-redux";
+import {PersonPage} from "@/render/public/PersonPage/PersonPage";
+import {Error404Page} from "@/render/public/Error404Page/Error404Page";
 
 export const PersonItem = (): JSX.Element => {
     const router = useRouter();

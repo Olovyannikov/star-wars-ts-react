@@ -3,11 +3,10 @@ import {useDispatch} from "react-redux";
 
 import {setPersonToFavorite, removePersonFromFavorite} from "@/store/actions";
 
+import {PersonFavoriteImage} from "../PersonFavoriteImage/PersonFavoriteImage";
+
 import s from './PersonPhoto.module.scss';
 import {PersonPhotoProps} from "./PersonPhoto.props";
-
-import fav from './fav.svg';
-import {PersonFavoriteImage} from "../PersonFavoriteImage/PersonFavoriteImage";
 
 export const PersonPhoto = ({personID, setPersonFav, personFav, ...props}: PersonPhotoProps): JSX.Element => {
     const dispatch = useDispatch();
@@ -40,7 +39,7 @@ export const PersonPhoto = ({personID, setPersonFav, personFav, ...props}: Perso
                         className={s.icon}
                         width={32}
                         height={32}
-                        color={personFav ? 'yellow' : 'none'}
+                        color={personFav ? 'var(--color-error)' : 'none'}
                     />
                 </button>
                 <Image {...props} priority={true}/>

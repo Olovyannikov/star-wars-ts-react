@@ -19,6 +19,16 @@ module.exports = {
             use: ['@svgr/webpack'],
         });
 
+        config.module.rules.push({
+            test: /\.(mp4)/,
+            use: {
+                loader: 'url-loader', // this need file-loader
+                options: {
+                    limit: 50000
+                }
+            }
+        });
+
         return config;
     },
 }

@@ -1,18 +1,18 @@
 import cn from "classnames";
 import Link from 'next/link';
 import {useRouter} from "next/router";
+
 import {Theme, useTheme} from "@/context/Theme.context";
 
-import {Container} from "@/ui";
-import {FavoriteIcon} from "../../components/UI/FavoriteIcon/FavoriteIcon";
+import {Container, FavoriteIcon} from "@/ui";
 
 import s from './Header.module.scss';
 
 import {headerData} from "./Header.data";
 
-import {Aliance} from "./img/Aliance";
-import {Empire} from "./img/Empire";
 import {SW} from "./img/SW";
+import {Empire} from "./img/Empire";
+import {Aliance} from "./img/Aliance";
 
 export const Header = (): JSX.Element => {
     const router = useRouter();
