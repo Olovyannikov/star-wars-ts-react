@@ -46,7 +46,6 @@ export const PeoplePage = ({setErrorApi}: PeoplePageProps): JSX.Element => {
 
         } else {
             setErrorApi(true);
-
         }
     }
 
