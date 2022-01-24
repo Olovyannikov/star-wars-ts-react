@@ -15,9 +15,10 @@ export const PeopleList = ({people}: PeopleListProps): JSX.Element => {
                                 src={img}
                                 alt={name}
                                 layout='responsive'
+                                width={190}
+                                height={220}
+                                objectPosition='top center'
                                 priority
-                                width={400}
-                                height={550}
                                 className={s.image}
                             />
                             <p className={s.name}>{name}</p>

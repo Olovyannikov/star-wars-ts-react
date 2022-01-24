@@ -7,3 +7,4 @@ export * from './PersonPage/PersonLinkBack/PersonLinkBack';
 export * from './PersonPage/PersonFilms/PersonFilms';
 export * from './ErrorMessagePage/ErrorMessage';
 export * from './IndexPage/IndexPage';
+export * from './SearchPage';

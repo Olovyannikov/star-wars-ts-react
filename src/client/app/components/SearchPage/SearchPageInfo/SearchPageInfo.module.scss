@@ -1,3 +1,18 @@
+.list {
+  margin: var(--space-xl) 0;
+  display: grid;
+  row-gap: var(--space-s);
+  grid-template-columns: repeat(1, 1fr);
+
+  @include md-block {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include lg-block {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .item {
   p {
     color: var(--color-white);
@@ -5,7 +20,25 @@
 }
 
 .link {
-  display: block;
-  width: 200px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
   overflow: hidden;
+
+  span {
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: var(--border-radius-s);
+
+
+    @include md-block {
+      width: 70px !important;
+      height: 70px !important;
+    }
+  }
+}
+
+.error {
+  margin: var(--space-xl) 0 0 0;
+  color: var(--color-white);
 }

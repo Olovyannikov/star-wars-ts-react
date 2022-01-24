@@ -51,6 +51,7 @@ export const PeoplePage = ({setErrorApi}: PeoplePageProps): JSX.Element => {
 
     useEffect(() => {
         getResource(API_PEOPLE_RESERVE + queryPage);
+        // getResource(API_PEOPLE + queryPage);
     }, [queryPage]);
 
     return (

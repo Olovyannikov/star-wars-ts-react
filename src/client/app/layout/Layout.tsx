@@ -16,7 +16,7 @@ const Layout = ({children}: LayoutProps): JSX.Element => {
 
     return (
         <>
-            {theme === Theme.Grey && <Image className={s.image} src={defaultBg} layout='fill'/>}
+            {theme === Theme.Grey && <Image unoptimized={true} className={s.image} src={defaultBg} layout='fill'/>}
             {theme === Theme.Light && <div className={cn(s.image, s.light)}/>}
             {theme === Theme.Dark && <div className={cn(s.image, s.dark)}/>}
             <div className={s.wrapper}>

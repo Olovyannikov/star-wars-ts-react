@@ -8,7 +8,8 @@ export default {
 } as ComponentMeta<typeof Input>;
 
 const props: InputProps = {
-    placeholder: 'Enter something'
+    placeholder: 'Enter something',
+    value: ''
 };
 
 const Template: ComponentStory<typeof Input> = (args: InputProps): JSX.Element => <Input {...args} />;

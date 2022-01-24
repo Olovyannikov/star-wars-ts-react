@@ -1,8 +1,14 @@
 .list {
   padding-bottom: var(--space-xl);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 207px));
   gap: var(--space-l);
+
+  @include lg-block {
+    grid-template-columns: repeat(auto-fit, minmax(190px, 216px));
+    justify-content: flex-start;
+  }
 }
 
 .item {

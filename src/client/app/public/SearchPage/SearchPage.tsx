@@ -1,13 +1,15 @@
-import {ChangeEvent, useEffect, useState} from "react";
+import {ChangeEvent, useCallback, useEffect, useState} from "react";
 
 import {Container, Input, Title} from "@/ui";
 
+import {SearchPageInfo} from "@/components";
+
 import {getResources} from "@/utils/network";
 import {API_SEARCH} from "@/constants/constants";
+import {getPeopleId, getPeopleImage} from "@/services/getPeopleData";
 
 import {SearchPageProps} from "./SearchPage.props";
-import {getPeopleId, getPeopleImage} from "@/services/getPeopleData";
-import {SearchPageInfo} from "@/client/app/components/SearchPage";
+import {debounce} from "lodash";
 
 export const SearchPage = ({setErrorApi}: SearchPageProps): JSX.Element => {
     const [value, setValue] = useState<string>('');
@@ -39,12 +41,22 @@ export const SearchPage = ({setErrorApi}: SearchPageProps): JSX.Element => {
         (async () => {
             await getResponse(API_SEARCH + '')
         })();
-    }, [results]);
+    }, []);
+
+    const debouncedGetResponse = useCallback(
+        debounce((value: string) => getResponse(API_SEARCH + value), 300),
+        []
+    )
 
     const inputChangeHandler = async (e: ChangeEvent<HTMLInputElement>) => {
         const val = e.target.value;
         setValue(e.target.value);
-        await getResponse(API_SEARCH + val);
+        await debouncedGetResponse(val);
+    }
+
+    const clearHandler = async () => {
+        setValue('');
+        await debouncedGetResponse('');
     }
 
     return (
@@ -53,6 +65,7 @@ export const SearchPage = ({setErrorApi}: SearchPageProps): JSX.Element => {
                 <Title>Search</Title>
                 <Input
                     value={value}
+                    clearHandler={clearHandler}
                     placeholder='Search here...'
                     onChange={inputChangeHandler}
                 />
